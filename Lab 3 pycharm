@@ -1,0 +1,59 @@
+# Lab 3
+#task 1
+more = [x + 1 for x in [1,2,3,4]]   # [x=1,x=2,x=3,x=4]
+print()                            # [2,3,4,5]
+
+def square(n:int) -> int:
+    return n * n           # [n=1,n=2,n=3,n=4]
+                        #return values = [n=1,n=4,n=9,n=16]
+
+
+squares = [square(x) for x in [1,2,3,4]]
+print()             # The values above are returned from the function square and into the list
+                    #[1,4,9,16]
+
+def check(n:int) -> bool:
+    return n > 2          #[n=0,n=1,n=2,n=3,n=4]
+                        # [         3,4]
+
+
+answer = [x for x in range(5) if check(x)]   # [3,4]
+print()
+
+def inc(m:int) -> int:
+    return m + 1               # [m=0,m=1,m=2,m=3,m=4]
+# return value  = [m=1,m=2,m=3,m=4,m=5]
+
+def check(n:int) -> bool:
+    return n > 2                             #[m=0,m=1,m=2,m=3,m=4]
+                                            # [3,4]
+
+
+answer = [inc(x) for x in range(5) if check(x)]   # [4,5]
+print()
+
+#Task 2
+def tally(nums:list[int]) -> int:
+    total = 0
+    for num in nums:
+        total = total + num           # nums = 4 total = 4, nums = 9 total = 13, nums = 2 total = 15, nums = 1 total =16
+    return total
+
+result = tally([4, 9, 2, 1])
+def copy(nums:list[int]) -> list[int]:
+    new_list = []
+    for idx in range(len(nums)):
+        new_list.append(nums[idx])     # idx =0 newlist= [4], idx =1 newlist= [4,9], idx =2 newlist= [4,9,2],
+                                        # idx =3 newlist= [4,9,2,1]
+    return new_list                    # this one copies the append to new list while the other one
+                                       # added up all of the others
+
+result = copy([4, 9, 2, 1])
+def increment_all(nums:list[int]) -> list[int]:
+    new_list = []
+    for value in nums:
+        new_list.append(value + 1)     # idx = 0 newlist= [5], idx = 1 newlist= [5,10], idx = 2 newlist= [5,10,3], 
+                                #idx = 3 newlist= [5,10,3,2]
+    return new_list
+                                #new_list = [5,10,3,2]
+result = increment_all([4, 9, 2, 1])
